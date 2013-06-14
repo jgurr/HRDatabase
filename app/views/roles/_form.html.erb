@@ -1,0 +1,50 @@
+<%= form_for @role, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :open, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :open, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :current, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :current, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :employee_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :employee_id, options_from_collection_for_select(Employee.all, :id, :name), :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :division_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :division_id, options_from_collection_for_select(Division.all, :id, :name), :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :title_id, options_from_collection_for_select(Title.all, :id, :name), :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :salary, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :salary, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                roles_path, :class => 'btn' %>
+  </div>
+<% end %>
