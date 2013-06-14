@@ -9,7 +9,7 @@
 
 Employee.destroy_all
 
-employees = Employee.create([{name: 'Lisa Fong', dob: '24/12/84'}, {name: 'Jeff Gurr', dob: '23/09/85'}, {name: 'Peter McKelvy', dob: '28/02/83'}, {name: 'Greg Larkin', dob: '01/06/85'}, {name: 'Josh Elkin', dob: '25/12/85'}, {name: 'Jeff Cohen', dob: '20/03/89'}])
+employees = Employee.create([{ name: 'Lisa Fong', dob: '24/12/84' }, { name: 'Jeff Gurr', dob: '23/09/85' }, { name: 'Peter McKelvy', dob: '28/02/83' }, { name: 'Greg Larkin', dob: '01/06/85' }, { name: 'Josh Elkin', dob: '25/12/85' }, { name: 'Jeff Cohen', dob: '20/03/89' }])
 
 #data = [{name: 'Lisa Fong', dob: '24/12/84'}, {name: 'Jeff Gurr', dob: '23/09/85'}, {name: 'Peter McKelvy', dob: '28/02/83'}, {name: 'Greg Larkin', dob: '01/06/85'}, {name: 'Josh Elkin', dob: '25/12/85'}, {name: 'Jeff Cohen', dob: '20/03/89'}]
 
@@ -54,12 +54,14 @@ Role.destroy_all
 
 # date = [{open: 0, current: 0, name: 'Vice President Marketing', employee_id: 1, division_id: 2, title_id: 2, salary: 250000}, 
 #  {open: 0, current: 1, name: 'Cheif Marketing Office', employee_id: 1, division_id: 2, title_id: 2, salary: 500000},
-#  {open: 0, current: 0, name: 'Creative Manager', employee_id: 2, division_id: 3, title_id: 4, salary: 250000}, 
-#  {open: 0, current: 1, name: 'Creative Director', employee_id: 2, division_id: 3, title_id: 3, salary: 500000}, 
-#  {open: 0, current: 1, name: 'Cheif Financial Office', employee_id: 3, division_id: 1, title_id: 2, salary: 500000}, 
-#  {open: 0, current: 1, name: 'Cheif Operating Office', employee_id: 4, division_id: 4, title_id: 2, salary: 500000}, 
-#  {open: 0, current: 1, name: 'Co-Head IT', employee_id: 5, division_id: 4, title_id: 1, salary: 500000}, 
-#  {open: 0, current: 1, name: 'Co-Head IT', employee_id: 6, division_id: 4, title_id: 1, salary: 500000}, {open: 1, current: 0, name: 'Office Manager', employee_id: '', division_id: 4, title_id: 4, salary: 100000}, {open: 1, current: 0, name: 'Creative Manager', employee_id: '', division_id: 3, title_id: 4, salary: 100000}]
+#  {open: 0, current: 0, name: 'Creative Manager', employee_id: employees.second, division_id: divisions.third, title_id: titles.fourth, salary: 250000}, 
+#  {open: 0, current: 1, name: 'Creative Director', employee_id: employees.second, division_id: divisions.third, title_id: titles.third, salary: 500000}, 
+#  {open: 0, current: 1, name: 'Cheif Financial Office', employee_id: employees.third, division_id: divisions.first, title_id: titles.second, salary: 500000}, 
+#  {open: 0, current: 1, name: 'Cheif Operating Office', employee_id: employees.fourth, division_id: divisions.fourth, title_id: titles.second, salary: 500000}, 
+#  {open: 0, current: 1, name: 'Co-Head IT', employee_id: employees.fifth, division_id: divisions.fourth, title_id: titles.first, salary: 500000}, 
+#  {open: 0, current: 1, name: 'Co-Head IT', employee_id: employees.sixth, division_id: divisions.fourth, title_id: titles.first, salary: 500000},
+#  {open: 1, current: 0, name: 'Office Manager', employee_id: '', division_id: divisions.fourth, title_id: titles.fourth, salary: 100000},
+# {open: 1, current: 0, name: 'Creative Manager', employee_id: '', division_id: divisions.fourth, title_id: titles.fourth, salary: 100000}]
 
 #data.each do |role_info|
 #  r = Role.new
@@ -75,7 +77,8 @@ Role.destroy_all
 #
 #puts "There are now #{Role.count} roles in the database"
 
-Role.create(open: 0, current: 0, name: 'Vice President Marketing', employee: employees.first, division: divisions.second, title: titles.second, salary: 250000)
+Role.create([{open: 0, current: 0, name: 'Vice President Marketing', employee_id: employees.first, division_id: divisions.second, title_id: titles.second, salary: 250000}, {open: 0, current: 1, name: 'Cheif Marketing Office', employee_id: employees.first, division_id: divisions.second, title_id: titles.second, salary: 500000}, {open: 0, current: 0, name: 'Creative Manager', employee_id: employees.second, division_id: divisions.third, title_id: titles.fourth, salary: 250000}, {open: 0, current: 1, name: 'Creative Director', employee_id: employees.second, division_id: divisions.third, title_id: titles.third, salary: 500000}, {open: 0, current: 1, name: 'Cheif Financial Office', employee_id: employees.third, division_id: divisions.first, title_id: titles.second, salary: 500000}, {open: 0, current: 1, name: 'Cheif Operating Office', employee_id: employees.fourth, division_id: divisions.fourth, title_id: titles.second, salary: 500000}, {open: 0, current: 1, name: 'Co-Head IT', employee_id: employees.fifth, division_id: divisions.fourth, title_id: titles.first, salary: 500000}, {open: 0, current: 1, name: 'Co-Head IT', employee_id: employees.last, division_id: divisions.fourth, title_id: titles.first, salary: 500000}, {open: 1, current: 0, name: 'Office Manager', employee_id: '', division_id: divisions.fourth, title_id: titles.fourth, salary: 100000}, {open: 1, current: 0, name: 'Creative Manager', employee_id: '', division_id: divisions.fourth, title_id: titles.fourth, salary: 100000}])
+
 
 puts "There are now #{Role.count} roles in the database"
 
